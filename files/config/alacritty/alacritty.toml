@@ -1,0 +1,13 @@
+[window]
+opacity = 0.95
+
+[scrolling]
+history = 1024
+
+[font]
+family = "Hack"
+size = 13
+
+[colors]
+background = "#181818"
+transparent_background_colors = true

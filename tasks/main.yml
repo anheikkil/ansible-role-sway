@@ -2,3 +2,33 @@
 # tasks file for ansible_role_sway
 - name: Include variables
   ansible.builtin.include_tasks: tasks/include_vars.yml
+
+- name: Install system packages
+  tags: package
+  become: true
+  ansible.builtin.package:
+    name: "{{ system_packages }}"
+    state: present
+  when: install_sway
+
+- name: Install Sway packages
+  tags: package,wm,tiling
+  become: true
+  ansible.builtin.package:
+    name: "{{ sway_packages }}"
+    state: present
+  when: install_sway
+
+- name: Remove Sway packages
+  tags: package,wm,tiling
+  become: true
+  ansible.builtin.package:
+    name: "{{ sway_packages }}"
+    state: absent
+  when: not install_sway
+
+- name: Configure alacritty
+  ansible.builtin.include_tasks: tasks/configure_alacritty.yml
+
+- name: Configure foot terminal
+  ansible.builtin.include_tasks: tasks/configure_foot.yml

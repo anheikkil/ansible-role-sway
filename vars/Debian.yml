@@ -1,0 +1,50 @@
+---
+# vars file for ansible_role_sway
+alacritty_package: alacritty
+foot_package: foot
+lightdm_packages:
+  - lightdm
+  - lightdm-settings
+  - slick-greeter
+#  - light-locker
+system_packages:
+  - adwaita-icon-theme
+  - brightnessctl
+  - dconf-cli
+  - fonts-hack
+  - gvfs-backends
+  - gvfs-fuse
+  - libnotify-bin
+  - network-manager
+  - pipewire-audio
+  - policykit-1 # transitional package, depends on polkitd pkexec
+  - sound-theme-freedesktop
+  - wl-clipboard
+  - xdg-desktop-portal
+  - xdg-desktop-portal-gtk
+  - xdg-desktop-portal-wlr
+  - xwayland
+#  - blueman
+#  - bluez
+#  - dconf-gsettings-backend
+#  - gnome-keyring # pinentry-gnome3
+#  - libpam-gnome-keyring
+#  - libsecret-1-0
+#  - papirus-icon-theme
+#  - pinentry-curses
+#  - pinentry-gtk2
+#  - pinentry-tty
+#  - policykit-1-gnome
+sway_packages:
+  - dunst # sway-notification-center mako-notifier
+  - grim
+  - jq
+  - pulsemixer
+  - slurp
+  - sway
+  - swaybg
+  - swayidle
+  - swayimg # imv
+  - swaylock
+  - waybar
+  - wofi # tofi rofi

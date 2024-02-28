@@ -1,2 +1,5 @@
 ---
 # defaults file for ansible_role_sway
+install_alacritty: false
+install_foot: true
+install_sway: true

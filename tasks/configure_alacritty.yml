@@ -1,0 +1,16 @@
+---
+- name: Install alacritty package
+  tags: package,terminal-emulator
+  become: true
+  ansible.builtin.package:
+    name: "{{ alacritty_package }}"
+    state: present
+  when: install_alacritty
+
+- name: Remove alacritty package
+  tags: package,terminal-emulator
+  become: true
+  ansible.builtin.package:
+    name: "{{ alacritty_package }}"
+    state: absent
+  when: not install_alacritty

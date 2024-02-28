@@ -1,0 +1,16 @@
+---
+- name: Install foot package
+  tags: package,terminal-emulator
+  become: true
+  ansible.builtin.package:
+    name: "{{ foot_package }}"
+    state: present
+  when: install_foot
+
+- name: Remove foot package
+  tags: package,terminal-emulator
+  become: true
+  ansible.builtin.package:
+    name: "{{ foot_package }}"
+    state: absent
+  when: not install_foot
